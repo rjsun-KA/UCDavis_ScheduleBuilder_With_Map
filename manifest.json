@@ -1,0 +1,28 @@
+{
+   "background": {
+      "page": "background.html",
+      "persistent": false
+   },
+   "content_scripts": [ {
+      "js": [ "jquery.js", "inject_button.js" ],
+      "matches": [ "https://my.ucdavis.edu/schedulebuilder/index.cfm?*" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://apis.google.com https://maps.googleapis.com; default-src 'self' https://campusmap.ucdavis.edu",
+   "description": "This extension allows exporting from UC Davis Schedule Builder to Google Calendar.",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon16.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAltDCFvc4oUGWOkEisZiZqgvoaghTykk47atmJyM44C9hpphnLIHWDy3C4z76MKTLqzQXN1H6hhcVqdURvVP2FWz0IN5WyUiDfw3E4XIDgnzNRaQ3+1p8cjU2PvSfmcgYR+hb/e/Mm+rNGK1yWYNaF6LkmXI70E76B8404qOql2SdYJxvba8mMJG4p253fGiuLs36UO/w2D7guSA/+lXbWkSZlCZ/7x7iA9iN6Q4nCAVBpM+btLwNUHmuRHVVyoeueCStkVcqwXljhIjh/8tm/l8RNV+sAAjgmehY1yawjkPuyg3zCxMQ31c2lGJA5sc3oH7Umo0TRxolGzUve/XVZwIDAQAB",
+   "manifest_version": 2,
+   "web_accessible_resources":["campus_map_4-26-19.png"],
+   "name": "Schedule Builder Export",
+   "oauth2": {
+      "client_id": "502982538310-vr27ue5j4ptn0rqc6eulmdcv3fe0gp7p.apps.googleusercontent.com",
+      "scopes": [ "https://www.googleapis.com/auth/calendar" ]
+   },
+   "permissions": [ "https://my.ucdavis.edu/schedulebuilder/*", "https://apis.google.com/js/*", "identity" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.5"
+}
